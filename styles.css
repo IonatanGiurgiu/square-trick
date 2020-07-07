@@ -1,0 +1,35 @@
+body {
+    margin: 40px;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-rows: min(15vw, 15vh) min(15vw, 15vh) min(15vw, 15vh) min(15vw, 15vh);
+    grid-template-columns: min(15vw, 15vh) min(15vw, 15vh) min(15vw, 15vh) min(15vw, 15vh);
+    grid-gap: 4px;
+    background-color: #fff;
+    justify-content: center;
+}
+  
+  .box {
+    background-color: blue;
+    color: blue;
+    border-radius: 5px;
+    font-size: 0%;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #rand, #read {
+      margin: 15px;
+      padding: 10px;
+      font-size: large;
+  }
+
+  .center {
+      display: flex;
+      justify-content: center;
+  }
