@@ -21,8 +21,8 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  function randomize() {
-    for(i = 1; i <= 16; i++) {
+  function randomize(n) {
+    for(i = 1; i <= n; i++) {
         id = "b" + i.toString();
         var element = document.getElementById(id);
         val = Math.round(Math.random());
@@ -36,26 +36,27 @@ window.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function read() {
+  function read(n) {
     board = [];
     line = [];
-    for(i = 1; i <= 16; i++) {
+    for(i = 1; i <= n*n; i++) {
         line.push(parseInt(document.getElementById("b" + i.toString()).innerHTML));
-        if (i % 4 == 0) {
+        if (i % n == 0) {
             board.push(line);
             line = [];
         }
     }
     list_binary = [];
 
+    xlessthan = parseInt(Math.log2(n));
     for (twice = 0; twice < 2; twice++){
-        for (x = 0; x < 2; x++){
+        for (x = 0; x < xlessthan; x++){
             check_even = 0;
-            rowend = parseInt(4/2**(x+1));
+            rowend = parseInt(n/2**(x+1));
             for (row = 0; row < rowend; row++){
-                for (col = 0; col < 4; col++){
+                for (col = 0; col < n; col++){
                     for (jump = 0; jump < 2**x; jump++){
-                        if (board[row+jump*parseInt((4/2**x))][col] == 1){
+                        if (board[row+jump*parseInt((n/2**x))][col] == 1){
                             check_even += 1;
                         }
                     }
@@ -71,11 +72,11 @@ window.addEventListener("DOMContentLoaded", function() {
             board = transpose(board);
         }
     }
-    decimal = 16
-    decimal -= list_binary[0] * 2 ** 3;
-    decimal -= list_binary[1] * 2 ** 2;
-    decimal -= list_binary[2] * 2 ** 1;
-    decimal -= list_binary[3] * 2 ** 0;
+ 
+    decimal = n*n;
+    for (i=0; i<xlessthan*2; i++) {
+        decimal -= list_binary[i] * 2 ** (xlessthan*2-1-i);
+    }
 
     square = document.getElementById("b" + decimal.toString());
     square.style.backgroundColor = "gold";

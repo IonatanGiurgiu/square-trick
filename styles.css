@@ -1,6 +1,21 @@
 body {
     margin: 40px;
   }
+
+#body8 {
+    margin-top: 0px;
+}
+
+#eightbyeight, #fourbyfour {
+    position: absolute;
+    left: 95vw;
+    top: 0px;
+}
+
+a {
+    text-decoration-color: white;
+    color: white;
+}
   
   .wrapper {
     display: grid;
@@ -10,6 +25,16 @@ body {
     background-color: #fff;
     justify-content: center;
 }
+
+.wrapper8 {
+    display: grid;
+    grid-template-rows: min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh);
+    grid-template-columns: min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh) min(9vw, 9vh);
+    grid-gap: 4px;
+    background-color: #fff;
+    justify-content: center;
+}
+
   
   .box {
     background-color: blue;
