@@ -8,10 +8,10 @@ Tutorial to use this website:
     TO BE POSTED
 
 
-Credits:
-1. Help with the clicable squares
+Credits
+1. Help with the clicable squares:
     Kostas Siabanis
     https://stackoverflow.com/questions/45907673/clickable-tiles-with-css-grid
-2. Code for transposing a 2d matrix
+2. Code for transposing a 2d matrix:
     Yangshun Tay
     https://stackoverflow.com/questions/17428587/transposing-a-2d-array-in-javascript
